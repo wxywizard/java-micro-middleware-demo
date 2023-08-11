@@ -2,8 +2,8 @@ package com.imooc;
 
 /**
  * @author wangxy
- * @Classname ${NAME}
- * @Date ${DATE} ${TIME}
+ * @Classname Main
+ * @Date 2023/8/11 17:45
  */
 public class Main {
     public static void main(String[] args) {
