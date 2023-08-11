@@ -1,4 +1,4 @@
-package com.imooc;
+package com.wizard;
 
 /**
  * @author wangxy
