@@ -4,3 +4,15 @@ server:
 spring:
   application:
     name: service-consumer
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 192.168.56.21:9093,192.168.56.21:9094,192.168.56.21:9095
+      bindings:
+        billChannel-in-0:
+          destination: test-topic
+        billChannel1-in-0:
+          destination: test-topic
+    function:
+      definition: billChannel

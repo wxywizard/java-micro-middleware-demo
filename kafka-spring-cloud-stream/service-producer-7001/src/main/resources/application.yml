@@ -4,3 +4,16 @@ server:
 spring:
   application:
     name: service-producer
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 192.168.56.21:9093,192.168.56.21:9094,192.168.56.21:9095
+      bindings:
+        billChannel-out-0:
+          destination: test-topic
+          content-type: application/json
+#          group: test-group
+        billChannel1-out-0:
+          destination: test-topic
+          content-type: application/json
