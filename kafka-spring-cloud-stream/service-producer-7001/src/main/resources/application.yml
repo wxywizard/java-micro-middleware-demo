@@ -9,6 +9,14 @@ spring:
       kafka:
         binder:
           brokers: 192.168.56.21:9093,192.168.56.21:9094,192.168.56.21:9095
+#       配置kafka认证方式
+#          configuration:
+#            security:
+#              protocol: SASL_PLAINTEXT
+#            sasl:
+#              mechanism: SCRAM-SHA-256
+#              jaas:
+#                config: org.apache.kafka.common.security.scram.ScramLoginModule required username="admin" password="admin-secret";
       bindings:
         billChannel-out-0:
           destination: test-topic
