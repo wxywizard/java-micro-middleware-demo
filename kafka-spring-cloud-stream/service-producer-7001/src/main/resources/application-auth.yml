@@ -1,0 +1,31 @@
+server:
+  port: 7001
+
+spring:
+  application:
+    name: service-producer
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 10.0.49.240:9092,10.0.49.241:9092,10.0.49.242:9092
+#       配置kafka认证方式
+          configuration:
+            security:
+              protocol: SASL_PLAINTEXT
+            sasl:
+              mechanism: SCRAM-SHA-256
+              jaas:
+                config: org.apache.kafka.common.security.scram.ScramLoginModule required username="youtha" password="";
+      bindings:
+        billChannel-out-0:
+          destination: test-youtha-billing-status-manager-topic
+          content-type: application/json
+        billChannel-in-0:
+          destination: test-youtha-billing-status-manager-topic
+          group: test-youtha-bill-group-B
+
+#logging:
+#  level:
+#    org.springframework.cloud.stream: DEBUG
+#    org.apache.kafka: DEBUG
