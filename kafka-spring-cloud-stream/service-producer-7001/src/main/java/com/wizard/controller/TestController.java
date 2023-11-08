@@ -33,4 +33,13 @@ public class TestController {
         streamBridge.send("billChannel1-out-0", MessageBuilder.withPayload(str).build());
         return "test";
     }
+
+    @GetMapping("/pending")
+    public String pending() {
+        String str = "{\"pending\":\"pending,down\"}";
+        streamBridge.send("pendingChannel-out-0", MessageBuilder.withPayload(str).build());
+        return "pending";
+    }
+
+
 }

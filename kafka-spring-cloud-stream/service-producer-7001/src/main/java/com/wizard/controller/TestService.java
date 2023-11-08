@@ -19,21 +19,14 @@ public class TestService {
     @Bean
     public Consumer<String> billChannel() {
         log.info("billChannel");
-        return message -> log.info("消息："+message);
+        return message -> log.info("billChannel消息："+message);
     }
 
-//    @Bean
-//    public Supplier<String> billChannelProduce() {
-//        return () -> {
-//            // 生产消息的逻辑
-//            return "Hello, World!";
-//        };
-//    }
+    @Bean
+    public Consumer<String> pendingChannel() {
+        log.info("pendingChannel");
+        return message -> log.info("pendingChannel消息："+message);
+    }
 
-//    @Bean
-//    public Consumer<String> billChannel1() {
-//        log.info("billChannel1");
-//        return message -> log.info("消息："+message);
-//    }
 
 }

@@ -16,15 +16,22 @@ spring:
             sasl:
               mechanism: SCRAM-SHA-256
               jaas:
-                config: org.apache.kafka.common.security.scram.ScramLoginModule required username="youtha" password="";
+                config: org.apache.kafka.common.security.scram.ScramLoginModule required username="youtha" password="skdYjfhrsnfi9";
       bindings:
         billChannel-out-0:
-          destination: test-youtha-billing-status-manager-topic
+          destination: test-youtha-contract-marketing-vouchers-topic
+          content-type: application/json
+        pendingChannel-out-0:
+          destination: test-youtha-pending-done-manager-topic
           content-type: application/json
         billChannel-in-0:
-          destination: test-youtha-billing-status-manager-topic
-          group: test-youtha-bill-group-B
-
+          destination:  test-youtha-contract-marketing-vouchers-topic
+          group: test-youtha-marketing-vouchers-group-B
+        pendingChannel-in-0:
+          destination: test-youtha-pending-done-manager-topic
+          group: test-youtha-pending-done-group-B
+    function:
+      definition: billChannel;pendingChannel
 #logging:
 #  level:
 #    org.springframework.cloud.stream: DEBUG

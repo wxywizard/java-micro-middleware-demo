@@ -1,6 +1,5 @@
 server:
   port: 7001
-
 spring:
   application:
     name: service-producer
@@ -25,3 +24,5 @@ spring:
         billChannel1-out-0:
           destination: test-topic
           content-type: application/json
+  profiles:
+    active: auth
